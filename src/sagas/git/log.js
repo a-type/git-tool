@@ -1,11 +1,11 @@
 import { takeEvery, call, put } from 'redux-saga/effects';
-import actions from 'actions/git/status';
+import actions from 'actions/git/log';
 import createGit from 'services/git';
 import gitSaga from 'sagas/util/gitSaga';
 
 export function* handleGet(action, git) {
-  const status = yield call(git.status);
-  yield put(actions.get.done(status));
+  const log = yield call(git.log, { from: action.payload.branch });
+  yield put(actions.get.done(log));
 }
 
 export default function* () {

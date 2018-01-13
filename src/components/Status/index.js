@@ -1,4 +1,5 @@
 import React from 'react';
+import Wireframe from 'react-wireframe';
 
 export default class Status extends React.Component {
   componentDidMount() {
@@ -7,9 +8,7 @@ export default class Status extends React.Component {
 
   render() {
     return (
-      <div>
-        {JSON.stringify(this.props.status)}
-      </div>
+      <Wireframe {...this.props} wireframe={{ name: 'Status' }} />
     );
   }
 }
