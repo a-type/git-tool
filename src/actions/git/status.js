@@ -1,4 +1,4 @@
-import createActions from 'actions/util/create';
+import createActions from 'actions/utils/create';
 
 export default createActions({
   get: {

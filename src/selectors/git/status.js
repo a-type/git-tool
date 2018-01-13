@@ -6,3 +6,7 @@ export const selectStatus = repoId => createSelector(
   selectDomain,
   domain => domain[repoId],
 );
+
+export default {
+  selectStatus,
+};

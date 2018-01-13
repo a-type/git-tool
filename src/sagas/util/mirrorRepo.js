@@ -1,6 +1,6 @@
-import hasRepo from 'actions/util/hasRepo';
-import getRepo from 'actions/util/getRepo';
-import withRepo from 'actions/util/withRepo';
+import hasRepo from 'actions/utils/hasRepo';
+import getRepo from 'actions/utils/getRepo';
+import withRepo from 'actions/utils/withRepo';
 
 export default function mirrorRepo(saga) {
   return function*(action) {

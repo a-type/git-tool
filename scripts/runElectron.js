@@ -3,6 +3,7 @@ const electron = require('electron');
 const app = electron.app;
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow;
+const { default: installExtension, REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } = require('electron-devtools-installer');
 
 const path = require('path');
 const url = require('url');
@@ -19,7 +20,7 @@ let mainWindow;
 
 function createWindow() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: 800, height: 600});
+    mainWindow = new BrowserWindow({width: 1000, height: 800});
 
     // and load the index.html of the app.
     mainWindow.loadURL(startUrl);
@@ -33,7 +34,12 @@ function createWindow() {
         // in an array if your app supports multi windows, this is the time
         // when you should delete the corresponding element.
         mainWindow = null
-    })
+    });
+
+    installExtension(REACT_DEVELOPER_TOOLS)
+      .then(() => installExtension(REDUX_DEVTOOLS))
+      .then(() => console.info('dev tools installed'))
+      .catch(err => console.error(err));
 }
 
 // This method will be called when Electron has finished
