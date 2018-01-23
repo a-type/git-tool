@@ -1,3 +1,5 @@
+### [abandoned] Attempt at creating a visual Git client. Ultimately I think Kraken is more in line with what I want.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
